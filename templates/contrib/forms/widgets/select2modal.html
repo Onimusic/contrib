@@ -1,0 +1,35 @@
+{% load crispy_forms_field %}
+{% load i18n %}
+
+<div class="form-group">
+  <div class="custom-control custom-checkbox">
+    {% crispy_field field 'class' 'custom-control-input' %}
+    <label class="custom-control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+  </div>
+</div>
+
+
+
+
+<div class="form-group{% if 'form-horizontal' in form_class %} row{% endif %}">
+    {% if label_class %}
+        <div class="aab {{ label_class }}"></div>
+    {% endif %}
+
+    <div class="{{ field_class }}">
+        <input class="formset-selector"
+               type="hidden" name="{{ widget.name }}"{% if widget.value != None %}
+               value="{{ widget.value|stringformat:'s' }}"{% endif %}{% include "django/forms/widgets/attrs.html" %}>
+
+        <button class="formset-selector btn btn-success">
+            + {% trans 'Include' %}
+        </button>
+        <span class="formset-selector select2-modal-text">antigo deve ficar escrito aqui</span>
+    </div>
+</div>
+
+
+<script class="formset-selector">
+    console.log('aaaaaaaa')
+
+</script>
