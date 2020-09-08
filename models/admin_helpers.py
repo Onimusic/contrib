@@ -1,6 +1,6 @@
 from django.urls import reverse
 
-from yourappname.settings import local as settings
+from music_system.settings import local as settings
 
 
 class GetAdminUrl():

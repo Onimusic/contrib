@@ -1,5 +1,5 @@
 from django import template
-from yourappname.settings import local as settings
+from music_system.settings import local as settings
 
 register = template.Library()
 

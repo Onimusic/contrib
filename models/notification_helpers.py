@@ -4,7 +4,7 @@ from notifications.signals import notify
 from post_office import mail
 from django.utils.translation import gettext as _
 
-from yourappname.settings.base import FRONT_END__SITE_NAME, SUPPORT_MAIL
+from music_system.settings.base import FRONT_END__SITE_NAME, SUPPORT_MAIL
 
 
 def send_mail(recipients: list, template: str, context: dict, subject: str):
