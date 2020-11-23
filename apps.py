@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ContribConfig(AppConfig):
-    name = 'django_boilerplate.apps.contrib'
+    name = 'app_name.apps.contrib'
     label = 'contrib'
