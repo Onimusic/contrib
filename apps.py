@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class ContribConfig(AppConfig):
-    name = 'music_system.apps.contrib'
+    name = 'app_name.apps.contrib'
     label = 'contrib'

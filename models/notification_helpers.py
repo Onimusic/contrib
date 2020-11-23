@@ -4,8 +4,6 @@ from notifications.signals import notify
 from post_office import mail
 from django.utils.translation import gettext as _
 
-from music_system.settings.base import FRONT_END__SITE_NAME, SUPPORT_MAIL
-
 
 def send_mail(recipients: list, template: str, context: dict, subject: str):
     """Default function for sending emails
@@ -79,11 +77,11 @@ def process_notification(author, recipients, verb, target, url,
 
 
 def email_context_builder(email_url, email_title, email_subject, email_description, email_button_text, email_logo,
-                          email_master_client_name):
+                          email_master_client_name, support_mail: str, front_end_site_name: str):
     context = dict()
     email_support = _('Any questions? Email us!')
-    email_support_mail = SUPPORT_MAIL
-    email_site_name = FRONT_END__SITE_NAME
+    email_support_mail = support_mail
+    email_site_name = front_end_site_name
     context['url'] = email_url
     context['email_title'] = email_title
     context['email_subject'] = email_subject
