@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import transaction
-from notifications.signals import notify
-from post_office import mail
+# from notifications.signals import notify
+# from post_office import mail
 from django.utils.translation import gettext as _
 
 
@@ -13,12 +13,13 @@ def send_mail(recipients: list, template: str, context: dict, subject: str):
         context
         subject
     """
-    mail.send(
-        recipients,
-        # subject=subject,
-        template=template,
-        context=context,
-    )
+    pass
+    # mail.send(
+    #     recipients,
+    #     # subject=subject,
+    #     template=template,
+    #     context=context,
+    # )
 
 
 @transaction.atomic
@@ -54,7 +55,7 @@ def process_notification(author, recipients, verb, target, url,
     """
 
     # bell notification
-    notify.send(sender=author, recipient=recipients, verb=verb, target=target, url=url, emailed=send_email)
+    # notify.send(sender=author, recipient=recipients, verb=verb, target=target, url=url, emailed=send_email)
     # todo quando o ator da notificacao for um usuario, colocar o nome dele como ator pra melhorar a legibilidade
 
     # email notification management
