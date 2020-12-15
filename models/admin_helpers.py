@@ -3,7 +3,7 @@ from django.urls import reverse
 
 class GetAdminUrl():
     """
-    Retorna a url do admin do objeto
+    Classe que retorna a url do admin do objeto
     """
     def get_admin_url(self):
         return self.get_admin_url_by_id(self.id, self._meta.app_label, self._meta.model_name)
