@@ -34,12 +34,20 @@ def validate_file_max_size(file, max_size_kb: int):
         raise ValidationError("Max size of file is %s KB" % limit_kb)
 
 
+def validate_image_max_300(image):
+    return validate_file_max_size(image, 300)
+
+
 def validate_image_max_500(image):
     return validate_file_max_size(image, 500)
 
 
 def validate_file_max_1000(file):
     return validate_file_max_size(file, 1000)
+
+
+def validate_file_max_2000(file):
+    return validate_file_max_size(file, 2000)
 
 
 def validate_file_max_5000(file):
